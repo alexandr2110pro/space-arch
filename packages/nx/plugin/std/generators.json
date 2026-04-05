@@ -19,6 +19,11 @@
       "factory": "./dist/generators/mv/mv-generator",
       "schema": "./dist/generators/mv/schema.json",
       "description": "mv generator"
+    },
+    "zed-eslint": {
+      "factory": "./dist/generators/zed-eslint/zed-eslint",
+      "schema": "./dist/generators/zed-eslint/schema.json",
+      "description": "zed-eslint generator"
     }
   }
 }
