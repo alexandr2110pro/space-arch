@@ -123,6 +123,9 @@
       }
     },
     "git": {
+      "commit": true,
+      "tag": true,
+      "push": true,
       "commitMessage": "chore(release): bump versions [no ci]"
     },
     "version": {
@@ -133,6 +136,7 @@
     "changelog": {
       "workspaceChangelog": false,
       "projectChangelogs": {
+        "createRelease": "github",
         "entryWhenNoChanges": false,
         "renderOptions": {
           "authors": true

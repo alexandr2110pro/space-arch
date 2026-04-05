@@ -42,14 +42,10 @@ The workflow automatically:
 - Bumps versions in each affected package's `package.json`
 - Updates inter-package dependency references as needed
 - Generates/updates per-package `CHANGELOG.md` files
-- Commits, tags (e.g., `util-ts@1.7.0`, `util-enum@1.6.2`), and pushes
+- Commits, tags (e.g., `util-ts@1.7.0`, `util-enum@1.6.2`), and **pushes** commit + tags to `main`
+- Creates a GitHub Release per tag (via Nx's built-in `createRelease: "github"`)
 - Builds all public packages
 - Publishes affected packages to npm (with provenance)
-- Creates a GitHub Release for each tag
-
-### First release under independent versioning
-
-When running the workflow for the first time after migrating from fixed versioning, enable the `first-release` flag. This tells Nx to create the initial per-package tags (`util-ts@X.Y.Z`, `util-enum@X.Y.Z`, etc.) based on each package's current version on disk.
 
 ## Local Development
 
@@ -67,8 +63,7 @@ nx release --dry-run
 nx local-registry
 
 # Terminal 2: release and publish locally
-nx release --skip-publish --first-release     # first time only
-nx release --skip-publish                     # subsequent releases
+nx release --skip-publish
 nx release publish --registry=http://localhost:4873
 ```
 
