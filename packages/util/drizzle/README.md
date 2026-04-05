@@ -41,20 +41,20 @@ const users = await db.select().from(usersTable);
 
 ### UUIDv7 Column Types
 
-Drizzle column types for UUIDv7 with automatic generation.
+PostgreSQL `uuid` columns auto-filled with UUIDv7 on insert. Nullable by default — chain `.notNull()` / `.primaryKey()` as you would with drizzle's built-in `uuid()`.
 
 ```typescript
 import { pgTable } from 'drizzle-orm/pg-core';
-import { uuidV7, uuidV7Nullable } from '@space-arch/util-drizzle';
+import { uuidV7 } from '@space-arch/util-drizzle';
 
 const users = pgTable('users', {
-  id: uuidV7('id').primaryKey(),
-  parentId: uuidV7Nullable('parent_id')
+  id:       uuidV7().primaryKey(),           // PK, auto-filled on insert
+  tenantId: uuidV7('tenant_id').notNull(),   // required FK
+  parentId: uuidV7('parent_id'),             // nullable FK
 });
 ```
 
-- `uuidV7()` - Not null with automatic default value generation
-- `uuidV7Nullable()` - Nullable without default value
+The default is applied at insert time by the drizzle runtime — it does NOT emit a SQL `DEFAULT` clause in migrations. For a raw nullable uuid with no auto-default, use drizzle's built-in `uuid()` directly.
 
 ## Contributing
 
