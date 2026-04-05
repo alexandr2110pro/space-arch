@@ -1,5 +1,6 @@
 import { type Tree, joinPathFragments } from '@nx/devkit';
 
+import { deleteTsModuleSettings } from './deleteTsModuleSettings.ts';
 import { updateArrayProperty } from './updateArrayProperty.ts';
 import { updateTsConfigLibJson } from './updateTsConfigLibJson.ts';
 import { updateTsConfigSpecJson } from './updateTsConfigSpecJson.ts';
@@ -22,17 +23,15 @@ const BABELRC = `
 export function setReactTsOptions(tree: Tree, path: string) {
   tree.write(joinPathFragments(path, '.babelrc'), BABELRC);
 
+  deleteTsModuleSettings(tree, path);
+
   updateTsConfigSpecJson(tree, path, json => {
     json.compilerOptions.jsx = 'react-jsx';
-    json.compilerOptions.module = 'esnext';
-    json.compilerOptions.moduleResolution = 'bundler';
     return json;
   });
 
   updateTsConfigLibJson(tree, path, json => {
     json.compilerOptions.jsx = 'react-jsx';
-    json.compilerOptions.module = 'esnext';
-    json.compilerOptions.moduleResolution = 'bundler';
 
     updateArrayProperty(json.compilerOptions, 'types', [
       'node',

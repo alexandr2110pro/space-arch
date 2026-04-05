@@ -1,6 +1,7 @@
 {
   "extends": "../../../../tsconfig.base.json",
   "compilerOptions": {
+    "target": "esnext",
     "rewriteRelativeImportExtensions": true,
     "outDir": "./out-tsc/vitest",
     "types": [
