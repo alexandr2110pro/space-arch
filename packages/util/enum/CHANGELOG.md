@@ -1,3 +1,9 @@
+## 2.0.1 (2026-04-05)
+
+### 🧱 Updated Dependencies
+
+- Updated util-ts to 2.0.1
+
 ## 2.0.0 (2026-04-05)
 
 
