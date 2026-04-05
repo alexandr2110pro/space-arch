@@ -135,6 +135,7 @@
     },
     "changelog": {
       "workspaceChangelog": false,
+      "automaticFromRef": true,
       "projectChangelogs": {
         "createRelease": "github",
         "entryWhenNoChanges": false,
