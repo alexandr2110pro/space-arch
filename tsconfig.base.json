@@ -7,10 +7,11 @@
     "isolatedModules": true,
     "allowJs": true,
     "resolveJsonModule": true,
-    "lib": ["es2024"],
+    "lib": [
+      "es2025"
+    ],
+    "target": "es2025",
     "module": "nodenext",
-    "moduleResolution": "nodenext",
-    "target": "es2024",
     "moduleDetection": "force",
     "noEmitOnError": true,
     "noFallthroughCasesInSwitch": true,
@@ -22,6 +23,8 @@
     "strictNullChecks": true,
     "noUncheckedIndexedAccess": true,
     "verbatimModuleSyntax": true,
-    "customConditions": ["@space-arch/source"]
+    "customConditions": [
+      "@space-arch/source"
+    ]
   }
 }

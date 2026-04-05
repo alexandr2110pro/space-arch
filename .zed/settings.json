@@ -1,0 +1,15 @@
+{
+  "lsp": {
+    "eslint": {
+      "settings": {
+        "workingDirectories": [
+          "./",
+          "./packages/nx/plugin/std/",
+          "./packages/util/drizzle/",
+          "./packages/util/enum/",
+          "./packages/util/ts/"
+        ]
+      }
+    }
+  }
+}
