@@ -59,3 +59,5 @@ vitest.config.*.timestamp*
 out
 
 /local
+.claude/worktrees
+.claude/settings.local.json
