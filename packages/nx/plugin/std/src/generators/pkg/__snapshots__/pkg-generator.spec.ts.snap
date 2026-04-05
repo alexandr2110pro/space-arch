@@ -123,7 +123,7 @@ exports[`ts-reference-based not publishable package > should generate expected p
           "{options.reportsDirectory}"
         ],
         "options": {
-          "reportsDirectory": "../../../coverage/packages/foo/bar-baz"
+          "reportsDirectory": "coverage/packages/foo/bar-baz"
         }
       }
     }
@@ -210,7 +210,7 @@ exports[`ts-reference-based publishable package > should generate expected packa
           "{options.reportsDirectory}"
         ],
         "options": {
-          "reportsDirectory": "../../../coverage/packages/foo/bar-baz"
+          "reportsDirectory": "coverage/packages/foo/bar-baz"
         }
       },
       "lint": {

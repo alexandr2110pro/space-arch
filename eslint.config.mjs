@@ -23,6 +23,7 @@ export default [
       'tmp/**',
       '**/generated',
       '**/dist',
+      '**/out-tsc',
       '**/vite.config.*.timestamp*',
       '**/vitest.config.*.timestamp*',
     ],

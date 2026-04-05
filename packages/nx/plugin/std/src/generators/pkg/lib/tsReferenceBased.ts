@@ -63,6 +63,7 @@ export async function tsReferenceBased(
         const dotExport = (
           json.exports as Record<string, Record<string, string>>
         )?.['.'];
+
         if (typeof dotExport !== 'object' || dotExport === null) {
           throw new Error(
             '"." export is not an object in generated package.json',
